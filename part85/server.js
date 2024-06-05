@@ -10,6 +10,11 @@ app.get("/home",(req,res) => [
     res.send("dilshan your done it")
 ])
 
-app.listen(port,() => [
-    console.log(`the url is https://localhost:${port}`)
-])
+//using variable =>
+    app.get('/home/:slug', (req,res) => {
+        res.send(`this is page of ${req.params.slug}`)
+    })
+
+app.listen(port,() => {
+    console.log(`the url is localhost:${port}`)
+})
